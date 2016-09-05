@@ -1,15 +1,21 @@
-# codeigniter-login-logout-register
-A user login, logout, register start for Codeigniter 3
+# codeigniter-login-signup
+A user login, register with Codeigniter 3.1.0 using a third party pluign (Hybridauth).
 
 ## Installation
-1. Open /application/config/database.php and edit with your database settings
-2. On your database, open a SQL terminal paste this and execute:
+1. Copy the files to your codeignitor Installation.
+2. OPen /application/config/config.php and edit the base url setting.
+1. Open /application/config/database.php and edit database settings
+2. On your SQL terminal, paste the following query and execute:
 
 ```sql
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `username` varchar(255) NOT NULL DEFAULT '',
   `email` varchar(255) NOT NULL DEFAULT '',
+  `firstname` varchar(255) NOT NULL DEFAULT '',
+  `lastname` varchar(255) NOT NULL DEFAULT '',
+  `gender` varchar(255) NOT NULL DEFAULT '',
+  `phone` varchar(255) NOT NULL DEFAULT '',
   `password` varchar(255) NOT NULL DEFAULT '',
   `avatar` varchar(255) DEFAULT 'default.jpg',
   `created_at` datetime NOT NULL,
@@ -28,10 +34,4 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
         KEY `ci_sessions_timestamp` (`timestamp`)
 );
 ```
-Go to http://example.com/register and create a user
-
-## Usage
-It is just a starter for user login logout register functionalities.
-
-Extend the user controller or keep it as it is and write your own application with Codeigniter.
-"# codeignitor-login-signup" 
+Open http://yourdomain.com/login to access the Application.
